@@ -30,7 +30,7 @@ namespace Game.Controller.Operation
                         nextPosition += new Position(1, 0);
                         break;
                     default:
-                        break;
+                        return false;
                 }
 
                 return BoardManager.Instance.PlatformIsExists(nextPosition);
@@ -38,14 +38,27 @@ namespace Game.Controller.Operation
 
             public override IEnumerator Run ()
             {
-                if (IsValid())
+                if (!IsValid())
                 {
-                    Platform currentPlatform = BoardManager.Instance.GetPlatform(botController.currentPosition);
-                    Platform nextPlatform = BoardManager.Instance.GetPlatform(nextPosition);
+                    // Play warning sound when jump is not valid
+                    botController.PlayWarningSound(BotController.WarningType.Jump);
+                    yield break;
+                }
 
-                    if ((nextPlatform.Height - currentPlatform.Height == 1) 
-                        || (currentPlatform.Height - nextPlatform.Height > 0))
-                        yield return botController.Jump(nextPosition, nextPlatform.lastBlock.transform.position);
+                Platform currentPlatform = BoardManager.Instance.GetPlatform(botController.currentPosition);
+                Platform nextPlatform = BoardManager.Instance.GetPlatform(nextPosition);
+
+                // Check if we need to jump (height difference or going down)
+                if ((nextPlatform.Height - currentPlatform.Height == 1) 
+                    || (currentPlatform.Height - nextPlatform.Height > 0))
+                {
+                    yield return botController.Jump(nextPosition, nextPlatform.lastBlock.transform.position);
+                }
+                else
+                {
+                    // Play warning sound if jump conditions are not met
+                    botController.PlayWarningSound(BotController.WarningType.Jump);
+                    yield break;
                 }
             }
         #endregion

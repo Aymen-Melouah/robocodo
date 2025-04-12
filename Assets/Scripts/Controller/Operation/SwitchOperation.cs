@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿
+using System.Collections;
 
 namespace Game.Controller.Operation
 {
@@ -14,16 +15,19 @@ namespace Game.Controller.Operation
             public override bool IsValid ()
             {
                 targetPlatform = BoardManager.Instance.GetTargetPlatform(botController.currentPosition);
-
-                if (targetPlatform)
-                    return true;
-                return false;
+                return targetPlatform != null;
             }
 
             public override IEnumerator Run ()
             {
-                if (IsValid())
-                    yield return botController.Switch(targetPlatform);
+                if (!IsValid())
+                {
+                    // Play warning sound when no target platform exists
+                    botController.PlayWarningSound(BotController.WarningType.Switch);
+                    yield break;
+                }
+
+                yield return botController.Switch(targetPlatform);
             }
         #endregion
     }

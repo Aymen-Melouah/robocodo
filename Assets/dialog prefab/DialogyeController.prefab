@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6379528548861315795
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 106695368614556877}
+  - component: {fileID: 4971234544590865444}
+  m_Layer: 0
+  m_Name: DialogyeController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &106695368614556877
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6379528548861315795}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 836.0259, y: 484.9003, z: 6.8262424}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4971234544590865444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6379528548861315795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c70d4eebeb7cf964d8e40053672e1327, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DialogueText: {fileID: 0}
+  Sentences:
+  - hello
+  - fuck you
+  - thank you
+  SentenceAudios:
+  - {fileID: 8300000, guid: 382a8d6bb34e65741928bbd1eca08c93, type: 3}
+  - {fileID: 8300000, guid: f0390fc8a74735f4e82526519c507c9b, type: 3}
+  - {fileID: 8300000, guid: f6925226bc45e6c45a29d6b6815a24cf, type: 3}
+  Index: 0
+  DialogueSpeed: 0.05
+  DialogueAnimator: {fileID: 0}
+  StartDialogue: 1
+  audioSource: {fileID: 0}

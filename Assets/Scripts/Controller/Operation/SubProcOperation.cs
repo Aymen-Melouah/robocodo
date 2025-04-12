@@ -11,15 +11,22 @@ namespace Game.Controller.Operation
         #endregion
 
         #region Methods
-            public override bool IsValid ()
+            public override bool IsValid()
             {
                 return true;
             }
 
             public override IEnumerator Run()
             {
-                for (int i = 0; i < GameManager.Instance.SubProcedures[index].Operations.Count; i++)
-                    yield return GameManager.Instance.SubProcedures[index].Operations[i].Run();
+                // Get the botController reference
+                BotController botController = GameObject.FindObjectOfType<BotController>();
+                
+                // Use the ExecuteOperations method instead of running operations individually
+                if (GameManager.Instance.SubProcedures[index].Operations.Count > 0)
+                {
+                    yield return botController.ExecuteOperations(
+                        GameManager.Instance.SubProcedures[index].Operations);
+                }
             }
         #endregion
     }
