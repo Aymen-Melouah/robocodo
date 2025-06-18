@@ -29,7 +29,7 @@ namespace Game.UI
 
         [SerializeField]
         private GameObject panelFinish;
-        
+
         [SerializeField]
         public AudioSource winSound; // Added for win sound
 
@@ -116,23 +116,47 @@ namespace Game.UI
 
         public void ShowFinish()
         {
+            StartCoroutine(ShowFinishWithFade());
+        }
+
+        private System.Collections.IEnumerator ShowFinishWithFade()
+        {
+            yield return new WaitForSeconds(1f);
+
             panelFinish.SetActive(true);
-            
+
+            CanvasGroup canvasGroup = panelFinish.GetComponent<CanvasGroup>();
+            if (canvasGroup == null)
+            {
+                canvasGroup = panelFinish.AddComponent<CanvasGroup>();
+            }
+            canvasGroup.alpha = 0f;
+
             if (winSound != null)
             {
-                winSound.Play(); // Play the win sound when the panel is displayed
+                winSound.Play();
             }
+
+            float duration = 0.5f;
+            float elapsed = 0f;
+            while (elapsed < duration)
+            {
+                elapsed += Time.deltaTime;
+                canvasGroup.alpha = Mathf.Clamp01(elapsed / duration);
+                yield return null;
+            }
+            canvasGroup.alpha = 1f;
         }
 
         public void NextLevel()
         {
             Debug.Log("NextLevel button clicked");
-            
+
             int currentScene = SceneManager.GetActiveScene().buildIndex;
             int nextScene = currentScene + 1;
-            
+
             Debug.Log("Current scene: " + currentScene + ", Next scene: " + nextScene);
-            
+
             if (nextScene < SceneManager.sceneCountInBuildSettings)
             {
                 Debug.Log("Loading next scene directly: " + nextScene);
@@ -146,6 +170,10 @@ namespace Game.UI
         }
 
         public void BackToMain()
+        {
+            GameManager.LoadLevel(10);
+        }
+         public void BackToStartMenu()
         {
             GameManager.LoadLevel(0);
         }
