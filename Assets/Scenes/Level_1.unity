@@ -1697,7 +1697,7 @@ AudioSource:
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
-  Pan2D: 0
+  Pan2D: -0.21
   rolloffMode: 0
   BypassEffects: 0
   BypassListenerEffects: 0
@@ -2074,7 +2074,7 @@ PrefabInstance:
     - target: {fileID: 106695368614556877, guid: 590023142607e9f48b9e7b7931bdac15,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 836.0259
+      value: 972
       objectReference: {fileID: 0}
     - target: {fileID: 106695368614556877, guid: 590023142607e9f48b9e7b7931bdac15,
         type: 3}
@@ -2133,13 +2133,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4971234544590865444, guid: 590023142607e9f48b9e7b7931bdac15,
         type: 3}
+      propertyPath: videoPlayer
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4971234544590865444, guid: 590023142607e9f48b9e7b7931bdac15,
+        type: 3}
       propertyPath: DialogueText
       value: 
       objectReference: {fileID: 1252425294}
     - target: {fileID: 4971234544590865444, guid: 590023142607e9f48b9e7b7931bdac15,
         type: 3}
+      propertyPath: VideoDisplay
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4971234544590865444, guid: 590023142607e9f48b9e7b7931bdac15,
+        type: 3}
       propertyPath: SpriteDisplay
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4971234544590865444, guid: 590023142607e9f48b9e7b7931bdac15,
+        type: 3}
+      propertyPath: AutoStartDelay
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4971234544590865444, guid: 590023142607e9f48b9e7b7931bdac15,
         type: 3}
@@ -2148,14 +2163,46 @@ PrefabInstance:
       objectReference: {fileID: 2071447861}
     - target: {fileID: 4971234544590865444, guid: 590023142607e9f48b9e7b7931bdac15,
         type: 3}
+      propertyPath: AllVideos.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4971234544590865444, guid: 590023142607e9f48b9e7b7931bdac15,
+        type: 3}
       propertyPath: Sentences.Array.size
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4971234544590865444, guid: 590023142607e9f48b9e7b7931bdac15,
         type: 3}
       propertyPath: AllSprites.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4971234544590865444, guid: 590023142607e9f48b9e7b7931bdac15,
+        type: 3}
+      propertyPath: AllVideos.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4971234544590865444, guid: 590023142607e9f48b9e7b7931bdac15,
+        type: 3}
+      propertyPath: AllVideos.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4971234544590865444, guid: 590023142607e9f48b9e7b7931bdac15,
+        type: 3}
+      propertyPath: AllVideos.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4971234544590865444, guid: 590023142607e9f48b9e7b7931bdac15,
+        type: 3}
+      propertyPath: AllVideos.Array.data[3]
+      value: 
+      objectReference: {fileID: 32900000, guid: 168e1fed125022b4fa0bab80b38f0773,
+        type: 3}
+    - target: {fileID: 4971234544590865444, guid: 590023142607e9f48b9e7b7931bdac15,
+        type: 3}
+      propertyPath: AllVideos.Array.data[4]
+      value: 
+      objectReference: {fileID: 32900000, guid: 168e1fed125022b4fa0bab80b38f0773,
+        type: 3}
     - target: {fileID: 4971234544590865444, guid: 590023142607e9f48b9e7b7931bdac15,
         type: 3}
       propertyPath: Sentences.Array.data[0]
@@ -2188,6 +2235,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4971234544590865444, guid: 590023142607e9f48b9e7b7931bdac15,
         type: 3}
+      propertyPath: VideoIndices.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4971234544590865444, guid: 590023142607e9f48b9e7b7931bdac15,
+        type: 3}
       propertyPath: AllSprites.Array.data[0]
       value: 
       objectReference: {fileID: 0}
@@ -2195,17 +2247,52 @@ PrefabInstance:
         type: 3}
       propertyPath: AllSprites.Array.data[1]
       value: 
-      objectReference: {fileID: 21300000, guid: d6dad06a210563f4081ecbf81b50dc16,
+      objectReference: {fileID: 0}
+    - target: {fileID: 4971234544590865444, guid: 590023142607e9f48b9e7b7931bdac15,
+        type: 3}
+      propertyPath: AllSprites.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4971234544590865444, guid: 590023142607e9f48b9e7b7931bdac15,
+        type: 3}
+      propertyPath: AllSprites.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: 6f5e590e76c8ca34e86c2c27c1669c55,
         type: 3}
     - target: {fileID: 4971234544590865444, guid: 590023142607e9f48b9e7b7931bdac15,
         type: 3}
       propertyPath: SpriteIndices.Array.size
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4971234544590865444, guid: 590023142607e9f48b9e7b7931bdac15,
         type: 3}
       propertyPath: SentenceAudios.Array.size
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4971234544590865444, guid: 590023142607e9f48b9e7b7931bdac15,
+        type: 3}
+      propertyPath: VideoTriggerSentenceIndex
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4971234544590865444, guid: 590023142607e9f48b9e7b7931bdac15,
+        type: 3}
+      propertyPath: VideoIndices.Array.data[0]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4971234544590865444, guid: 590023142607e9f48b9e7b7931bdac15,
+        type: 3}
+      propertyPath: VideoIndices.Array.data[1]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4971234544590865444, guid: 590023142607e9f48b9e7b7931bdac15,
+        type: 3}
+      propertyPath: VideoIndices.Array.data[2]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4971234544590865444, guid: 590023142607e9f48b9e7b7931bdac15,
+        type: 3}
+      propertyPath: VideoIndices.Array.data[3]
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4971234544590865444, guid: 590023142607e9f48b9e7b7931bdac15,
         type: 3}
@@ -2216,6 +2303,16 @@ PrefabInstance:
         type: 3}
       propertyPath: SpriteIndices.Array.data[1]
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4971234544590865444, guid: 590023142607e9f48b9e7b7931bdac15,
+        type: 3}
+      propertyPath: SpriteIndices.Array.data[2]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4971234544590865444, guid: 590023142607e9f48b9e7b7931bdac15,
+        type: 3}
+      propertyPath: SpriteIndices.Array.data[3]
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4971234544590865444, guid: 590023142607e9f48b9e7b7931bdac15,
         type: 3}
